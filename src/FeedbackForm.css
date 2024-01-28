@@ -11,28 +11,16 @@ body {
 .feedback-form-container {
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%); /* Glassy diamond gradient */
     padding: 50px;
-    border-radius: 15px;
+    border-radius: 15px; /* Initial partial square shape */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     max-width: 500px;
     text-align: center;
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        background: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
-    }
-    100% {
-        box-shadow: 0 0 40px rgba(255, 99, 71, 0.8);
-        background: linear-gradient(45deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
-    }
+    transition: all 0.3s ease-in-out; /* Transition for shape change */
 }
 
 .feedback-form-container:hover {
-    border-radius: 15px;
+    border-radius: 0; /* Perfect square shape on hover */
     transform: scale(1.1);
-    animation: none;
     box-shadow: 0 0 40px rgba(255, 99, 71, 0.8);
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
 }
