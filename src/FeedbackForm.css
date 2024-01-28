@@ -1,0 +1,81 @@
+/* src/FeedbackForm.css */
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f3f4; /* Light background color */
+}
+
+.feedback-form-container {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%); /* Glassy diamond gradient */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    text-align: center;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(255, 99, 71, 0.8);
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+}
+
+.feedback-form-container:hover {
+    border-radius: 15px;
+    transform: scale(1.1);
+    animation: none;
+    box-shadow: 0 0 40px rgba(255, 99, 71, 0.8);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3498db; /* Blue color for the heading */
+}
+
+Form.Control {
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Larger font size */
+    border: 2px solid #3498db; /* Blue border color */
+    border-radius: 15px; /* Larger border radius */
+    padding: 20px; /* Larger padding */
+    width: calc(100% - 40px); /* Adjusted width calculation */
+    color: #2c3e50; /* Dark text color */
+    background-color: transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+Form.Control:focus {
+    outline: none;
+    border-color: #2980b9; /* Darker blue color on focus */
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.8); /* Blue shadow on focus */
+}
+
+Form.Control::placeholder {
+    color: #7f8c8d; /* Placeholder color */
+}
+
+Button {
+    background-color: #3498db; /* Blue color for the button */
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.8rem; /* Larger font size */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+Button:hover {
+    background-color: #2980b9; /* Darker blue color on hover */
+}
