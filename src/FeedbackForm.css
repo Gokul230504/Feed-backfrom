@@ -7,6 +7,13 @@ body {
     height: 100vh;
     background-color: #f0f3f4; /* Light background color */
 }
+.feedback-form-container.invalid {
+    box-shadow: 0 0 40px rgba(255, 71, 71, 0.8); /* Red shadow for invalid state */
+  }
+  
+  .feedback-form-container.valid {
+    box-shadow: 0 0 40px rgba(71, 255, 71, 0.8); /* Green shadow for valid state */
+  }
 
 .feedback-form-container {
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%); /* Glassy diamond gradient */
