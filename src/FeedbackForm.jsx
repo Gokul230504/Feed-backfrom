@@ -2,31 +2,28 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import './FeedbackForm.css'; // Import custom styles
-
+import './FeedbackForm.css'; 
+import axios from 'axios'
 const FeedbackForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [feedback, setFeedback] = useState('');
-
+  const [responseMessage,setResponseMessage]=useState('');
   const [isNameValid, setIsNameValid] = useState(true);
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isFeedbackValid, setIsFeedbackValid] = useState(true);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Validate fields
+  const handleSubmit = async(event) => {
+    event.preventDefault();
+    const res=await axios.post("http://localhost:3001",{name:name,email:email,feedback:feedback})
+    console.log(res.data)
+    setResponseMessage("Succesful")
     setIsNameValid(name.trim() !== '');
     setIsEmailValid(validateEmail(email));
     setIsFeedbackValid(feedback.trim() !== '');
-
-    // Handle form submission logic here
   };
 
   const validateEmail = (email) => {
-    // Add your email validation logic here
-    // For simplicity, a basic email validation is used
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
@@ -75,6 +72,7 @@ const FeedbackForm = () => {
         <Button variant="primary" type="submit">
           Submit Feedback
         </Button>
+        <p>{responseMessage}</p>
       </Form>
     </motion.div>
   );

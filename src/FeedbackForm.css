@@ -8,11 +8,13 @@ body {
     background-color: #f0f3f4; /* Light background color */
 }
 .feedback-form-container.invalid {
-    box-shadow: 0 0 40px rgba(255, 71, 71, 0.8); /* Red shadow for invalid state */
+    box-shadow: 0 0 40px greenyellow; 
+    background-color: white;/* Red shadow for invalid state */
   }
   
   .feedback-form-container.valid {
     box-shadow: 0 0 40px rgba(71, 255, 71, 0.8); /* Green shadow for valid state */
+    border-radius: 5.6%;
   }
 
 .feedback-form-container {
